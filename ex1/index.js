@@ -17,3 +17,18 @@ function gridGenerator(xAxis, yAxis){
     }
     document.querySelector('body').appendChild(grid);
 }
+
+//Set a random color for each cell of the generated grid
+function setRandomColor(){
+  var td = document.querySelectorAll('td');
+  td.forEach(function(td){
+    var red = Math.floor(Math.random() * 256);
+    var green = Math.floor(Math.random() * 256);
+    var blue = Math.floor(Math.random() * 256);
+    td.style.backgroundColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+  });
+}
+
+// Test
+gridGenerator(2,3);
+setInterval(setRandomColor, Math.random()*1000 + 1000;
