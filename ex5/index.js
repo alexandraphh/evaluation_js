@@ -66,3 +66,51 @@ function createForm(){
 
   document.body.appendChild(form);
 }
+
+// Verify fields follow the good format 
+
+function verifyForm(){
+  var lastName = document.querySelector('.lastName').value;
+  var firstName = document.querySelector('.firstName').value;
+  var email = document.querySelector('.email').value;
+  var password = document.querySelector('.password').value;
+
+  if(allValid(lastName, firstName, email, password)){
+    alert('Le formulaire a bien été envoyé !');
+    eraseAll();
+  } else if(!nameValid(lastName)){
+    alert('Attention, nom invalide');
+  } else if(!nameValid(firstName)){
+    alert('Attention, prenom invalide');
+  } else if(!emailValid(email)){
+    alert('Attention, email invalide');
+  } else {
+    alert('Attention, mot de passe invalide');
+  }
+}
+
+function nameValid(name){
+  return !name.search(/[A-Z][a-z]+((\s|-)[A-Z][a-z]+)*/g);
+}
+
+function emailValid(email){
+  return !email.search(/[A-Za-z0-9]([A-Za-z0-9]|-|_)*@([A-z]|-)+\.[A-z]+/g);
+}
+
+function passwordValid(password){
+  return !password.search(/[A-Za-z0-9]{8,}/g)
+}
+
+function allValid(lastName, firstName, email, password){
+  return nameValid(lastName) && nameValid(firstName) && emailValid(email) && passwordValid(password);
+}
+
+// Erase the input values when fields are correct
+function eraseAll(){
+  document.querySelector('.lastName').value = '';
+  document.querySelector('.firstName').value = '';
+  document.querySelector('.email').value = '';
+  document.querySelector('.password').value = '';
+}
+
+createForm();
