@@ -7,10 +7,14 @@
  */
 function gridGenerator(xAxis, yAxis){
   var grid = document.createElement('table');
+  grid.style.borderCollapse = 'collapse';
     for (var i=0; i<xAxis; i++){
       var tr = document.createElement('tr');
       for(var j=0; j<yAxis; j++){
-        var td = document.createElement('td');  
+        var td = document.createElement('td');
+        td.style.height = '50px';
+        td.style.width = '50px';
+        td.style.border = '2px solid black'
         tr.appendChild(td);
       }
       grid.appendChild(tr);
@@ -31,4 +35,4 @@ function setRandomColor(){
 
 // Test
 gridGenerator(2,3);
-setInterval(setRandomColor, Math.random()*1000 + 1000;
+setInterval(setRandomColor, Math.random()*1000 + 1000);
