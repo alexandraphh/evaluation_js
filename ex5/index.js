@@ -1,6 +1,8 @@
 'use strict';
 
-// Create the form in HTML format
+/**
+* Create the form in HTML format
+*/
 function createForm(){
   var form = document.createElement('form');
   form.setAttribute('class', 'form');
@@ -67,8 +69,13 @@ function createForm(){
   document.body.appendChild(form);
 }
 
-// Verify fields follow the good format 
-
+/**
+* Verify fields follow the good format : REGEX
+* @param {String} name
+* @param {String} email
+* @param {String} password
+* @param {String} password
+*/
 function verifyForm(){
   var lastName = document.querySelector('.lastName').value;
   var firstName = document.querySelector('.firstName').value;
@@ -105,7 +112,9 @@ function allValid(lastName, firstName, email, password){
   return nameValid(lastName) && nameValid(firstName) && emailValid(email) && passwordValid(password);
 }
 
-// Erase the input values when fields are correct
+/**
+* Erase the input values when fields are correct
+*/ 
 function eraseAll(){
   document.querySelector('.lastName').value = '';
   document.querySelector('.firstName').value = '';

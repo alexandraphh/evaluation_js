@@ -1,17 +1,24 @@
 'use strict';
 
-// Generate the World map
+/**
+* Generate the World map
+*/
 function renderWorldMap () {
 	document.body.innerHTML += WORLD_MAP;
 }
 
-// Create a span for display the clicked country
+/**
+* Display the clicked country
+*/
 function displayCountry(){
 	var span = document.createElement('span');
 	document.querySelector('body').appendChild(span);
 }
 
-// Change color of hovered country and clicked country
+/**
+* Change color of hovered country and clicked country
+* Add the attribute "fill" on path when click or hover
+*/
 function colorMap() {
 	var allPath = document.querySelectorAll("path");
 	allPath.forEach(function(path){
@@ -38,6 +45,9 @@ function colorMap() {
 	});
 };
 
+/**
+* Test
+*/
 renderWorldMap();
 displayCountry()
 colorMap();

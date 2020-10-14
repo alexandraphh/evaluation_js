@@ -1,6 +1,6 @@
 'use strict';
 
-/*
+/**
  * Generates a grid of size xAxis * yAxis
  * @param {number} xAxis
  * @param {mumber} yAxis
@@ -22,7 +22,9 @@ function gridGenerator(xAxis, yAxis){
     document.querySelector('body').appendChild(grid);
 }
 
-//Set a random color for each cell of the generated grid
+/**
+* Set a random color for each cell of the generated grid
+*/
 function setRandomColor(){
   var td = document.querySelectorAll('td');
   td.forEach(function(td){
@@ -33,6 +35,8 @@ function setRandomColor(){
   });
 }
 
-// Test
+/**
+* Test
+*/
 gridGenerator(2,3);
 setInterval(setRandomColor, Math.random()*1000 + 1000);
